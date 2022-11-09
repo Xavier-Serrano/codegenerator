@@ -1,0 +1,27 @@
+# 配置数据源
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mp?useSSL=false&&characterEncoding=utf-8&&serverTimezone=Asia/Shanghai
+    hikari:
+      username: root
+      password: 123456
+
+# mybatis-plus的配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*Mapper.xml
+  configuration:
+    # 打开mybatis运行sql的日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    #      configuration:
+    #        关闭打印sql查询数据
+    #        log-impl: org.apache.ibatis.logging.nologging.NoLoggingImpl
+    #                   开启打印sql查询数据
+    #                   org.apache.ibatis.logging.stdout.StdOutImpl
+
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.aaa.entity
+
+
+
+
